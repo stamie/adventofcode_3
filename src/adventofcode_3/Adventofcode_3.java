@@ -123,14 +123,14 @@ public class Adventofcode_3 {
                 long id = Adventofcode_3.getId(chars);
                 long[] startPoint = Adventofcode_3.getStartPoint(chars);
                 long[] endPoint = Adventofcode_3.getEndPoint(chars, startPoint);
+                System.out.println(startPoint[0]+";"+startPoint[1]);
                 //System.out.println(endPoint[0]+";"+endPoint[1]);
 
-                for (long pY = startPoint[1]; pY < endPoint[1]; pY++) {
+                for (long pY = startPoint[1]; pY <= endPoint[1]; pY++) {
 
-                    List<Row> rows = matrix.getRows();
                     Row row = new Row(pY);
 
-                    for (long pX = startPoint[0]; pX < endPoint[0]; pX++) {
+                    for (long pX = startPoint[0]; pX <= endPoint[0]; pX++) {
 
                         Pixel pixel = new Pixel(id, pX);
                         row.addPixelToRow(pixel);
@@ -146,8 +146,8 @@ public class Adventofcode_3 {
             }
            
             
-
-            System.out.println(matrix.getMoreClaimsCount());
+            long ret = matrix.getMoreClaimsCount();
+            System.out.println(ret);
 
         } catch (IOException e) {
             e.printStackTrace();

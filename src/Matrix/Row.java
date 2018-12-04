@@ -82,7 +82,7 @@ public class Row {
         long ret=0;
         
         for (Pixel pixel: this.Pixels) {
-            if (pixel.getId()==-1) {
+            if (pixel.getId() == -1) {
                 ret++;
             }
         }
