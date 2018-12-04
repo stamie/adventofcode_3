@@ -19,14 +19,14 @@ public class Row {
     protected long RowNum;
     protected long MoreClaimsCount;
     
-    Row(long rowNum) {
+    public Row(long rowNum) {
         this.Pixels = new LinkedList();
         this.RowNum = rowNum;
         this.MoreClaimsCount = 0;
     
     }
     
-    Row(long rowNum, LinkedList<Pixel> pixels) {
+    public Row(long rowNum, LinkedList<Pixel> pixels) {
         this.Pixels = new LinkedList();
         this.Pixels = pixels;
         this.RowNum = rowNum; //this is y

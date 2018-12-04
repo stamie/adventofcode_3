@@ -19,20 +19,21 @@ public class Matrix {
     protected long MoreClaimsCount;
     
     
-    Matrix() {
+    public Matrix() {
         
         this.Rows = new LinkedList();
         this.MoreClaimsCount = 0;
     
     }
     
-    Matrix(List<Row> rows) {
+    public Matrix(List<Row> rows) {
         
         this.Rows = new LinkedList();
         this.Rows = rows;
         this.setMoreClaimsCount();
         
     }
+
     
     public void setMoreClaimsCount() {
     

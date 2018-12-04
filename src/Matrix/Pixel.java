@@ -15,13 +15,13 @@ public class Pixel {
     protected long X;
     
     
-    Pixel(long id, long x) {
+    public Pixel(long id, long x) {
         
         this.Id = id;
         this.X = x;
 
     }
-    Pixel(long x) {
+    public Pixel(long x) {
         
         this.Id = 0;
         this.X = x;
