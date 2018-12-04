@@ -6,6 +6,7 @@
 package Matrix;
 
 import Matrix.Row;
+import Matrix.Pixel;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -54,17 +55,39 @@ public class Matrix {
             if (r.getRowNum() == row.getRowNum()) {
                 return;
             }
-            if (r.getRowNum() < row.getRowNum()) {
+            if (r.getRowNum() > row.getRowNum()) {
                 
-                this.Rows.add(i, r);
+                this.Rows.add(i, row);
+                this.setMoreClaimsCount();
+                return;
+            }
+            i++;
+        
+        }
+        this.Rows.add(row);
+        
+        this.setMoreClaimsCount();
+    
+    }
+    
+    public void updateRow(Row row) {
+        
+        int i = 0;
+        for (Row r: this.Rows) {
+            if (r.getRowNum() == row.getRowNum()) {
+                for (Pixel pixel: row.getPixels()){
+                    r.addPixelToRow(pixel);
+                }
+                this.Rows.remove(i);
+                this.Rows.add(r);
+                this.setMoreClaimsCount();
                 return;
             }
             i++;
         
         }
         
-        this.setMoreClaimsCount();
-    
+       
     }
     
     public List<Row> getRows() {
