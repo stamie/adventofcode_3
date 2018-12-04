@@ -47,7 +47,7 @@ public class Pixel {
     
     public void setPixel(Pixel p) {
 
-        if (this.getX() != p.getX() || this.getX() != p.getX()) {
+        if (!this.isThisPixel(p)) {
             return;
         }
         if (this.getId() == 0) {
@@ -57,6 +57,17 @@ public class Pixel {
         }
         return;
     }
+    
+    public boolean isThisPixel(Pixel p) {
+    
+        if (this.getX() != p.getX() || this.getX() != p.getX()) {
+            return false;
+        }
+        
+        return true;
+    
+    }
+    
     
             
     
