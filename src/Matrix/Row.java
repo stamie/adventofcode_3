@@ -5,6 +5,8 @@
  */
 package Matrix;
 
+import Matrix.Pixel;
+
 /**
  *
  * @author stampel

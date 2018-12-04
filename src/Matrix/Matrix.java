@@ -5,10 +5,13 @@
  */
 package Matrix;
 
+import Matrix.Row;
+
 /**
  *
  * @author stampel
  */
 public class Matrix {
+    
     
 }
