@@ -13,21 +13,18 @@ public class Pixel {
     
     protected long Id;
     protected long X;
-    protected long Y;
     
     
-    Pixel(long id, long x, long y) {
+    Pixel(long id, long x) {
         
         this.Id = id;
         this.X = x;
-        this.Y = y;
 
     }
-    Pixel(long x, long y) {
+    Pixel(long x) {
         
         this.Id = 0;
         this.X = x;
-        this.Y = y;
 
     }
     
@@ -41,9 +38,6 @@ public class Pixel {
         return this.X;
     }
     
-    public long getY() {
-        return this.Y;
-    }
     
     public void setPixel(Pixel p) {
 
