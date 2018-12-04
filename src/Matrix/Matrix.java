@@ -42,11 +42,12 @@ public class Matrix {
     }
     public void setMoreClaimsCount() {
         
-        this.MoreClaimsCount = 0;
+        long ret = 0;
         for (Row row: this.Rows){
-            this.MoreClaimsCount =+ row.getMoreClaimsCount();
+            ret += row.getMoreClaimsCount();
         
         }
+        this.MoreClaimsCount = ret;
     }
     
     public boolean addRow(Row row) {

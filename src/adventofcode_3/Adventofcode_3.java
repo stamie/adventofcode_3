@@ -106,7 +106,7 @@ public class Adventofcode_3 {
      */
     public static void main(String[] args) {
 
-        String fileName = "/home/stampel/adventofcode_3/src/advent_proba.txt";
+        String fileName = "/home/stampel/adventofcode_3/src/advent.txt";
 
         //read file into stream, try-with-resources
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
@@ -144,6 +144,7 @@ public class Adventofcode_3 {
                 }
 
             }
+           
             
 
             System.out.println(matrix.getMoreClaimsCount());
