@@ -29,9 +29,33 @@ public class Row {
     Row(long rowNum, LinkedList<Pixel> pixels) {
         this.Pixels = new LinkedList();
         this.Pixels = pixels;
-        this.RowNum = rowNum;
+        this.RowNum = rowNum; //this is y
         this.MoreClaimsCount = this.setMoreClaimsCount();
     
+    }
+    
+    public void addPixelToRow(Pixel pixel) {
+        
+        
+        int i = 0;
+        
+        for (Pixel p: this.Pixels) {
+            if (p.getX() == pixel.getX()) {
+                this.Pixels.remove(p);
+                p.setPixel(pixel);
+                this.Pixels.add(i, pixel);
+                this.setMoreClaimsCount();
+                return;
+            }
+            
+            if (p.getX() > pixel.getX()) {
+                this.Pixels.add(i, pixel);
+                return;
+            }
+            i++;
+        
+        }
+        
     }
     
     public List<Pixel> getPixels() {
@@ -44,7 +68,7 @@ public class Row {
         return this.MoreClaimsCount;
     }
     
-    private long setMoreClaimsCount(){
+    public long setMoreClaimsCount(){
         
         long ret=0;
         
