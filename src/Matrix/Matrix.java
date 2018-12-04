@@ -43,7 +43,7 @@ public class Matrix {
         
         this.MoreClaimsCount = 0;
         for (Row row: this.Rows){
-            this.MoreClaimsCount+= row.getMoreClaimsCount();
+            this.MoreClaimsCount += row.getMoreClaimsCount();
         
         }
     }

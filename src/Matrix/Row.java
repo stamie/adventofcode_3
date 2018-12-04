@@ -30,7 +30,7 @@ public class Row {
         this.Pixels = new LinkedList();
         this.Pixels = pixels;
         this.RowNum = rowNum; //this is y
-        this.MoreClaimsCount = this.setMoreClaimsCount();
+        this.setMoreClaimsCount();
     
     }
     
@@ -39,11 +39,18 @@ public class Row {
         
         int i = 0;
         
+        if (this.Pixels.isEmpty()) {
+            this.Pixels.add(pixel);
+            this.setMoreClaimsCount();
+            return;
+        
+        }
+        
         for (Pixel p: this.Pixels) {
             if (p.getX() == pixel.getX()) {
                 this.Pixels.remove(p);
                 p.setPixel(pixel);
-                this.Pixels.add(i, pixel);
+                this.Pixels.add(i, p);
                 this.setMoreClaimsCount();
                 return;
             }
@@ -55,7 +62,7 @@ public class Row {
             i++;
         
         }
-        
+        this.Pixels.add(pixel);
     }
     
     public List<Pixel> getPixels() {
@@ -65,10 +72,12 @@ public class Row {
         return this.RowNum;
     }
     public long getMoreClaimsCount() {
+        
+        this.setMoreClaimsCount();
         return this.MoreClaimsCount;
     }
     
-    public long setMoreClaimsCount(){
+    public void setMoreClaimsCount(){
         
         long ret=0;
         
@@ -78,6 +87,6 @@ public class Row {
             }
         }
 
-        return ret;
+        this.MoreClaimsCount = ret;
     }
 }
