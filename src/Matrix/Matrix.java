@@ -36,7 +36,8 @@ public class Matrix {
 
     
     public void setMoreClaimsCount() {
-    
+        
+        this.MoreClaimsCount = 0;
         for (Row row: this.Rows){
             this.MoreClaimsCount+= row.getMoreClaimsCount();
         
@@ -58,6 +59,14 @@ public class Matrix {
             i++;
         
         }
+        
+        this.setMoreClaimsCount();
+    
+    }
+    
+    public List<Row> getRows() {
+    
+        return this.Rows;
     
     }
     
