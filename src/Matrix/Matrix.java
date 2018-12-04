@@ -35,6 +35,9 @@ public class Matrix {
     }
 
     
+    public long getMoreClaimsCount() {
+        return this.MoreClaimsCount;
+    }
     public void setMoreClaimsCount() {
         
         this.MoreClaimsCount = 0;
