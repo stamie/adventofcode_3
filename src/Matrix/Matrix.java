@@ -37,13 +37,14 @@ public class Matrix {
 
     
     public long getMoreClaimsCount() {
+        this.setMoreClaimsCount();
         return this.MoreClaimsCount;
     }
     public void setMoreClaimsCount() {
         
         this.MoreClaimsCount = 0;
         for (Row row: this.Rows){
-            this.MoreClaimsCount += row.getMoreClaimsCount();
+            this.MoreClaimsCount =+ row.getMoreClaimsCount();
         
         }
     }
@@ -80,6 +81,7 @@ public class Matrix {
                 for (Pixel pixel: row.getPixels()){
                     r.addPixelToRow(pixel);
                 }
+                
                 this.Rows.remove(i);
                 this.Rows.add(r);
                 this.setMoreClaimsCount();
