@@ -48,18 +48,18 @@ public class Matrix {
         }
     }
     
-    public void addRow(Row row) {
+    public boolean addRow(Row row) {
         
         int i = 0;
         for (Row r: this.Rows) {
             if (r.getRowNum() == row.getRowNum()) {
-                return;
+                return false;
             }
             if (r.getRowNum() > row.getRowNum()) {
                 
                 this.Rows.add(i, row);
                 this.setMoreClaimsCount();
-                return;
+                return true;
             }
             i++;
         
@@ -67,6 +67,8 @@ public class Matrix {
         this.Rows.add(row);
         
         this.setMoreClaimsCount();
+        
+        return true;
     
     }
     
